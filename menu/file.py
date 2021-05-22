@@ -15,6 +15,7 @@ class Menu:
         self.path = 'menu/Menu.txt'     #Holds the path of Menu file
         self.Menu = self.menu_content() #Store the content of file into self.Menu Var
         self.items = self.get_items()	#Store each type of item in JSON format
+        self.create_file()
     
 ## This is fuction is used to update the self.menu each an class is called
     def menu_content(self):
@@ -62,7 +63,7 @@ class Menu:
         return "Successfull Added"
 
 
-    def update_items(self,item,UpdatedPrice,catogery=None):
+    def modify_items(self,case,item,UpdatedPrice=None,catogery=None):
         try:
             temp_file = open("menu/temp.txt","x")
         except FileExistsError:
@@ -70,24 +71,34 @@ class Menu:
             temp_file = open("menu/temp.txt","x")
 		
         file = open('menu/Menu.txt','r')
-	
-	
-        if catogery:
-            for line in file:
-                try: 
-                    cat,MenuItem,CurrentPrice = line.split(":")[:-1]
-                except ValueError:
-                    continue
-                if item == MenuItem:
-                    temp_file.write(cat+SEP+MenuItem+SEP+UpdatedPrice+SEP+NEXT)
-                    continue
-                temp_file.write(line+NEXT)
+        if case == "update":
+            if catogery:
+                for line in file:
+                    try: 
+                        cat,MenuItem,CurrentPrice = line.split(":")[:-1]
+                    except ValueError:
+                        continue
+                    if item == MenuItem:
+                        temp_file.write(cat+SEP+MenuItem+SEP+UpdatedPrice+SEP+NEXT)
+                        continue
+                    temp_file.write(line+NEXT)
+        elif case == "delete":
+            if catogery:
+                for line in file:
+                    try: 
+                        cat,MenuItem,CurrentPrice = line.split(":")[:-1]
+                    except ValueError:
+                        continue
+                    if item == MenuItem:
+                        continue
+                    temp_file.write(line+NEXT)
 		
-            temp_file.close()
-            file.close()
-		
-            os.remove('menu/Menu.txt')
-            os.rename("menu/temp.txt","menu/Menu.txt")
+
+        temp_file.close()
+        file.close()
+	
+        os.remove('menu/Menu.txt')
+        os.rename("menu/temp.txt","menu/Menu.txt")
         return 
 
     def delete_item(self,item,catogery=None):
@@ -112,7 +123,6 @@ class Menu:
 		
             file.close()
             temp_file.close()
-		
             os.remove("menu/Menu.txt")
             os.rename("menu/temp.txt","menu/Menu.txt")
         return
@@ -132,12 +142,18 @@ class Menu:
         webbrowser.get('chrome').open_new(path)
         #webbrowser.open(path)
 
-    def display(self):
-        for item in self.items.keys():
-            d = list(self.items[item].items())
-            print(" * * {} * *".format(item))
+    def display(self,catogery=None):
+        if catogery:
+            d = list(self.items[catogery].items())
+            print(" * * {} * *".format(catogery))
             print(tabulate(d,headers=["Items",'price']))
             print()
+        else:
+            for item in self.items.keys():
+                d = list(self.items[item].items())
+                print(" * * {} * *".format(item))
+                print(tabulate(d,headers=["Items",'price']))
+                print()
 
 
 

@@ -1,16 +1,5 @@
-
-from menu.file import Menu
-from menu import *
-
-
-
-
-
-
-
-if __name__ == "__main__":
-    Menu().display()
-
+#Menu().add_items("Chicken Kabab","200","STARTERS")
+    #.modify_items('delete','Chicken Kabab',catogery='STARTERS')
     #Menu().add_items("Choclate MilkShake","140","DESSERTS")
     #Menu().add_items("Mango MilkShake","150","DESSERTS")
     #Menu().add_items("South India Thalli","250","THALIS")
@@ -22,3 +11,4 @@ if __name__ == "__main__":
     #obj.add_items("Thandoori Full","400")
     #obj.add_items("Thandoori Half","250")
     #obj.add_items("Anirudh Spl","30")
+

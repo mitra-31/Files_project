@@ -2,7 +2,9 @@ Usage:
 
     main.py add <item> <price> <catogery>
 
-    main.py modify <case> <item> [price] <catogery>
+    main.py del <item> <catogery>
+
+    main.py update <item> <price> <catogery>
 
     main.py menu (--a|--r <catogery>)
 

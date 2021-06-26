@@ -1,0 +1,13 @@
+2:STARTERS:chicken:150:
+
+3:STARTERS:gobi_65:120:
+
+4:STARTERS:Chicken_kabab:210:
+
+6:BIRIYANIS:Chicken Biriyani:300:
+
+7:BIRIYANIS:Veg biriyani:120:
+
+8:BIRIYANIS:Egg Biriyani:100:
+
+9:STARTERS:prawns:200:

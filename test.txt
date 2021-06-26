@@ -12,3 +12,27 @@
     #obj.add_items("Thandoori Half","250")
     #obj.add_items("Anirudh Spl","30")
 
+BIRIYANIS:Chicken Biriyani:300:
+
+BIRIYANIS:Mutton Biriyani:300:
+
+STARTERS:Thandoori Full:400:
+
+DESSERTS:Choclate MilkShake:140:
+
+DESSERTS:Mango MilkShake:150:
+
+THALIS:South India Thalli:250:
+
+THALIS:North India Thalli:250:
+
+STARTERS:Chicken Kabab:200:
+
+STARTERS:gobi:80:
+
+STARTERS:panner:160:
+
+STARTERS:mushroom:160:
+
+STARTERS:gobi65:100:
+

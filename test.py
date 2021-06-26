@@ -41,9 +41,7 @@ cred.close()
 args = docopt(useage)
 
 
-if args['user']:
-    User().login(args['<username>'])
-elif args['add']:
+if args['add']:
     item = args['<item>']
     price = args['<price>']
     cat= args['<catogery>']
